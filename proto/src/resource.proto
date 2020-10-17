@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package processorpb;
+package resourcepb;
 
-option go_package = "github.com/naoto0822/k8s-playground/proto/go/processorpb";
+option go_package = "github.com/naoto0822/k8s-playground/proto/go/resourcepb";
 
 import "src/types.proto";
 
-service ProcessorSerice {
+service ResourceService {
   rpc GetSobaList(GetSobaRequest) returns (GetSobaResponse);
 }
 

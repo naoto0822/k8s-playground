@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package types;
+
+option go_package = "github.com/naoto0822/k8s-playground/proto/go/types";
+
+message Soba {
+  int64 id = 1;
+  string name = 2;
+}
