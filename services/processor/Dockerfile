@@ -6,12 +6,11 @@ COPY cmd ./cmd
 COPY pkg ./pkg
 COPY go.mod ./
 COPY go.sum ./
-COPY proto ./proto
 
 RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
-  go build -o ./api ./cmd/main.go
+  go build -o ./processor ./cmd/main.go
 
-EXPOSE 8080
+EXPOSE 8081
 
-ENTRYPOINT ["./api"]
+ENTRYPOINT ["./processor"]
