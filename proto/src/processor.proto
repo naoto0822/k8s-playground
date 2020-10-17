@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package processorpb;
+
+option go_package = "go/processorpb";
+
+service ProcessorSerice {
+  rpc GetSobaList(GetSobaRequest) returns (GetSobaResponse);
+}
+
+message GetSobaRequest {
+
+}
+
+message GetSobaResponse {
+  repeated Soba sobas = 1;
+}
+
+message Soba {
+  int64 id = 1;
+  string name = 2;
+}
