@@ -4,12 +4,13 @@ import (
 	"context"
 
 	"github.com/naoto0822/k8s-playground/proto/go/processorpb"
+	"github.com/naoto0822/k8s-playground/proto/go/types"
 
 	"google.golang.org/grpc"
 )
 
 type ProcessorService struct {
-	cli processorpb.ProcessorSericeClient
+	cli processorpb.ProcessorServiceClient
 }
 
 func NewProcessorService() (*ProcessorService, error) {
@@ -18,18 +19,18 @@ func NewProcessorService() (*ProcessorService, error) {
 		return nil, err
 	}
 
-	cli := processorpb.NewProcessorSericeClient(conn)
+	cli := processorpb.NewProcessorServiceClient(conn)
 	return &ProcessorService{
 		cli: cli,
 	}, nil
 }
 
-func (s ProcessorService) GetSobaList(ctx context.Context) ([]*processorpb.Soba, error) {
-	req := &processorpb.GetSobaRequest{}
-	res, err := s.cli.GetSobaList(ctx, req)
+func (s ProcessorService) GetSobaList(ctx context.Context) ([]*types.Ramen, error) {
+	req := &processorpb.GetRamenRequest{}
+	res, err := s.cli.GetRamenList(ctx, req)
 	if err != nil {
 		return nil, err
 	}
 
-	return res.Sobas, nil
+	return res.Ramens, nil
 }
