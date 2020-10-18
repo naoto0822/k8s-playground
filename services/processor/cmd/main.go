@@ -21,7 +21,7 @@ func main() {
 
 	gs := grpc.NewServer()
 	server := pkg.NewServer()
-	processorpb.RegisterProcessorSericeServer(gs, &server)
+	processorpb.RegisterProcessorServiceServer(gs, &server)
 
 	logger.Info("start processor server")
 	if err := gs.Serve(lis); err != nil {

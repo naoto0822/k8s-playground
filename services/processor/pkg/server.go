@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"github.com/naoto0822/k8s-playground/proto/go/processorpb"
+	"github.com/naoto0822/k8s-playground/proto/go/types"
 )
 
 type Server struct {
@@ -13,16 +14,16 @@ func NewServer() Server {
 	return Server{}
 }
 
-func (s Server) GetSobaList(context.Context, *processorpb.GetSobaRequest) (*processorpb.GetSobaResponse, error) {
-	sobas := []*processorpb.Soba{
+func (s Server) GetRamenList(ctx context.Context, req *processorpb.GetRamenRequest) (*processorpb.GetRamenResponse, error) {
+	ramens := []*types.Ramen{
 		{
 			Id:   1,
 			Name: "arimasa",
 		},
 	}
 
-	res := &processorpb.GetSobaResponse{
-		Sobas: sobas,
+	res := &processorpb.GetRamenResponse{
+		Ramens: ramens,
 	}
 
 	return res, nil
