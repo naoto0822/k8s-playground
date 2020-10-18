@@ -4,7 +4,7 @@ package types;
 
 option go_package = "github.com/naoto0822/k8s-playground/proto/go/types";
 
-message Soba {
+message Ramen {
   int64 id = 1;
   string name = 2;
 }

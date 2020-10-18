@@ -7,13 +7,13 @@ option go_package = "github.com/naoto0822/k8s-playground/proto/go/processorpb";
 import "src/types.proto";
 
 service ProcessorSerice {
-  rpc GetSobaList(GetSobaRequest) returns (GetSobaResponse);
+  rpc GetRamenList(GetRamenRequest) returns (GetRamenResponse);
 }
 
-message GetSobaRequest {
+message GetRamenRequest {
   // empty
 }
 
-message GetSobaResponse {
-  repeated types.Soba sobas = 1;
+message GetRamenResponse {
+  repeated types.Ramen Ramens = 1;
 }

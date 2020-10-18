@@ -30,14 +30,14 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type GetSobaRequest struct {
+type GetRamenRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *GetSobaRequest) Reset() {
-	*x = GetSobaRequest{}
+func (x *GetRamenRequest) Reset() {
+	*x = GetRamenRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_src_processor_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -45,13 +45,13 @@ func (x *GetSobaRequest) Reset() {
 	}
 }
 
-func (x *GetSobaRequest) String() string {
+func (x *GetRamenRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSobaRequest) ProtoMessage() {}
+func (*GetRamenRequest) ProtoMessage() {}
 
-func (x *GetSobaRequest) ProtoReflect() protoreflect.Message {
+func (x *GetRamenRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_src_processor_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -63,21 +63,21 @@ func (x *GetSobaRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSobaRequest.ProtoReflect.Descriptor instead.
-func (*GetSobaRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetRamenRequest.ProtoReflect.Descriptor instead.
+func (*GetRamenRequest) Descriptor() ([]byte, []int) {
 	return file_src_processor_proto_rawDescGZIP(), []int{0}
 }
 
-type GetSobaResponse struct {
+type GetRamenResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Sobas []*types.Soba `protobuf:"bytes,1,rep,name=sobas,proto3" json:"sobas,omitempty"`
+	Ramens []*types.Ramen `protobuf:"bytes,1,rep,name=Ramens,proto3" json:"Ramens,omitempty"`
 }
 
-func (x *GetSobaResponse) Reset() {
-	*x = GetSobaResponse{}
+func (x *GetRamenResponse) Reset() {
+	*x = GetRamenResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_src_processor_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -85,13 +85,13 @@ func (x *GetSobaResponse) Reset() {
 	}
 }
 
-func (x *GetSobaResponse) String() string {
+func (x *GetRamenResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSobaResponse) ProtoMessage() {}
+func (*GetRamenResponse) ProtoMessage() {}
 
-func (x *GetSobaResponse) ProtoReflect() protoreflect.Message {
+func (x *GetRamenResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_src_processor_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -103,14 +103,14 @@ func (x *GetSobaResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSobaResponse.ProtoReflect.Descriptor instead.
-func (*GetSobaResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetRamenResponse.ProtoReflect.Descriptor instead.
+func (*GetRamenResponse) Descriptor() ([]byte, []int) {
 	return file_src_processor_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetSobaResponse) GetSobas() []*types.Soba {
+func (x *GetRamenResponse) GetRamens() []*types.Ramen {
 	if x != nil {
-		return x.Sobas
+		return x.Ramens
 	}
 	return nil
 }
@@ -121,21 +121,22 @@ var file_src_processor_proto_rawDesc = []byte{
 	0x0a, 0x13, 0x73, 0x72, 0x63, 0x2f, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0b, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72,
 	0x70, 0x62, 0x1a, 0x0f, 0x73, 0x72, 0x63, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x22, 0x10, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x6f, 0x62, 0x61, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x34, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x6f, 0x62, 0x61,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x21, 0x0a, 0x05, 0x73, 0x6f, 0x62, 0x61,
-	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
-	0x53, 0x6f, 0x62, 0x61, 0x52, 0x05, 0x73, 0x6f, 0x62, 0x61, 0x73, 0x32, 0x5b, 0x0a, 0x0f, 0x50,
-	0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x53, 0x65, 0x72, 0x69, 0x63, 0x65, 0x12, 0x48,
-	0x0a, 0x0b, 0x47, 0x65, 0x74, 0x53, 0x6f, 0x62, 0x61, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1b, 0x2e,
-	0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x53,
-	0x6f, 0x62, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x70, 0x72, 0x6f,
-	0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x6f, 0x62, 0x61,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6e, 0x61, 0x6f, 0x74, 0x6f, 0x30, 0x38, 0x32, 0x32,
-	0x2f, 0x6b, 0x38, 0x73, 0x2d, 0x70, 0x6c, 0x61, 0x79, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x2f,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73,
-	0x6f, 0x72, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x74, 0x6f, 0x22, 0x11, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x52, 0x61, 0x6d, 0x65, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x38, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x52, 0x61, 0x6d,
+	0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x24, 0x0a, 0x06, 0x52, 0x61,
+	0x6d, 0x65, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x74, 0x79, 0x70,
+	0x65, 0x73, 0x2e, 0x52, 0x61, 0x6d, 0x65, 0x6e, 0x52, 0x06, 0x52, 0x61, 0x6d, 0x65, 0x6e, 0x73,
+	0x32, 0x5e, 0x0a, 0x0f, 0x50, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x53, 0x65, 0x72,
+	0x69, 0x63, 0x65, 0x12, 0x4b, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x52, 0x61, 0x6d, 0x65, 0x6e, 0x4c,
+	0x69, 0x73, 0x74, 0x12, 0x1c, 0x2e, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x70,
+	0x62, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x61, 0x6d, 0x65, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x1d, 0x2e, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x70, 0x62, 0x2e,
+	0x47, 0x65, 0x74, 0x52, 0x61, 0x6d, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6e,
+	0x61, 0x6f, 0x74, 0x6f, 0x30, 0x38, 0x32, 0x32, 0x2f, 0x6b, 0x38, 0x73, 0x2d, 0x70, 0x6c, 0x61,
+	0x79, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f,
+	0x2f, 0x70, 0x72, 0x6f, 0x63, 0x65, 0x73, 0x73, 0x6f, 0x72, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -152,14 +153,14 @@ func file_src_processor_proto_rawDescGZIP() []byte {
 
 var file_src_processor_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_src_processor_proto_goTypes = []interface{}{
-	(*GetSobaRequest)(nil),  // 0: processorpb.GetSobaRequest
-	(*GetSobaResponse)(nil), // 1: processorpb.GetSobaResponse
-	(*types.Soba)(nil),      // 2: types.Soba
+	(*GetRamenRequest)(nil),  // 0: processorpb.GetRamenRequest
+	(*GetRamenResponse)(nil), // 1: processorpb.GetRamenResponse
+	(*types.Ramen)(nil),      // 2: types.Ramen
 }
 var file_src_processor_proto_depIdxs = []int32{
-	2, // 0: processorpb.GetSobaResponse.sobas:type_name -> types.Soba
-	0, // 1: processorpb.ProcessorSerice.GetSobaList:input_type -> processorpb.GetSobaRequest
-	1, // 2: processorpb.ProcessorSerice.GetSobaList:output_type -> processorpb.GetSobaResponse
+	2, // 0: processorpb.GetRamenResponse.Ramens:type_name -> types.Ramen
+	0, // 1: processorpb.ProcessorSerice.GetRamenList:input_type -> processorpb.GetRamenRequest
+	1, // 2: processorpb.ProcessorSerice.GetRamenList:output_type -> processorpb.GetRamenResponse
 	2, // [2:3] is the sub-list for method output_type
 	1, // [1:2] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -174,7 +175,7 @@ func file_src_processor_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_src_processor_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSobaRequest); i {
+			switch v := v.(*GetRamenRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -186,7 +187,7 @@ func file_src_processor_proto_init() {
 			}
 		}
 		file_src_processor_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSobaResponse); i {
+			switch v := v.(*GetRamenResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -230,7 +231,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ProcessorSericeClient interface {
-	GetSobaList(ctx context.Context, in *GetSobaRequest, opts ...grpc.CallOption) (*GetSobaResponse, error)
+	GetRamenList(ctx context.Context, in *GetRamenRequest, opts ...grpc.CallOption) (*GetRamenResponse, error)
 }
 
 type processorSericeClient struct {
@@ -241,9 +242,9 @@ func NewProcessorSericeClient(cc grpc.ClientConnInterface) ProcessorSericeClient
 	return &processorSericeClient{cc}
 }
 
-func (c *processorSericeClient) GetSobaList(ctx context.Context, in *GetSobaRequest, opts ...grpc.CallOption) (*GetSobaResponse, error) {
-	out := new(GetSobaResponse)
-	err := c.cc.Invoke(ctx, "/processorpb.ProcessorSerice/GetSobaList", in, out, opts...)
+func (c *processorSericeClient) GetRamenList(ctx context.Context, in *GetRamenRequest, opts ...grpc.CallOption) (*GetRamenResponse, error) {
+	out := new(GetRamenResponse)
+	err := c.cc.Invoke(ctx, "/processorpb.ProcessorSerice/GetRamenList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -252,35 +253,35 @@ func (c *processorSericeClient) GetSobaList(ctx context.Context, in *GetSobaRequ
 
 // ProcessorSericeServer is the server API for ProcessorSerice service.
 type ProcessorSericeServer interface {
-	GetSobaList(context.Context, *GetSobaRequest) (*GetSobaResponse, error)
+	GetRamenList(context.Context, *GetRamenRequest) (*GetRamenResponse, error)
 }
 
 // UnimplementedProcessorSericeServer can be embedded to have forward compatible implementations.
 type UnimplementedProcessorSericeServer struct {
 }
 
-func (*UnimplementedProcessorSericeServer) GetSobaList(context.Context, *GetSobaRequest) (*GetSobaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSobaList not implemented")
+func (*UnimplementedProcessorSericeServer) GetRamenList(context.Context, *GetRamenRequest) (*GetRamenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRamenList not implemented")
 }
 
 func RegisterProcessorSericeServer(s *grpc.Server, srv ProcessorSericeServer) {
 	s.RegisterService(&_ProcessorSerice_serviceDesc, srv)
 }
 
-func _ProcessorSerice_GetSobaList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSobaRequest)
+func _ProcessorSerice_GetRamenList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRamenRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProcessorSericeServer).GetSobaList(ctx, in)
+		return srv.(ProcessorSericeServer).GetRamenList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/processorpb.ProcessorSerice/GetSobaList",
+		FullMethod: "/processorpb.ProcessorSerice/GetRamenList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProcessorSericeServer).GetSobaList(ctx, req.(*GetSobaRequest))
+		return srv.(ProcessorSericeServer).GetRamenList(ctx, req.(*GetRamenRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -290,8 +291,8 @@ var _ProcessorSerice_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*ProcessorSericeServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetSobaList",
-			Handler:    _ProcessorSerice_GetSobaList_Handler,
+			MethodName: "GetRamenList",
+			Handler:    _ProcessorSerice_GetRamenList_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
