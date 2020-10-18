@@ -6,7 +6,7 @@ option go_package = "github.com/naoto0822/k8s-playground/proto/go/processorpb";
 
 import "src/types.proto";
 
-service ProcessorSerice {
+service ProcessorService {
   rpc GetRamenList(GetRamenRequest) returns (GetRamenResponse);
 }
 
