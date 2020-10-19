@@ -25,7 +25,7 @@ func NewProcessorService() (*ProcessorService, error) {
 	}, nil
 }
 
-func (s ProcessorService) GetSobaList(ctx context.Context) ([]*types.Ramen, error) {
+func (s *ProcessorService) GetSobaList(ctx context.Context) ([]*types.Ramen, error) {
 	req := &processorpb.GetRamenRequest{}
 	res, err := s.cli.GetRamenList(ctx, req)
 	if err != nil {

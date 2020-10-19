@@ -19,9 +19,13 @@ func main() {
 		logger.Fatal("failed listen", zap.Error(err))
 	}
 
+	server, err := initServer()
+	if err != nil {
+		logger.Fatal("failed init server", zap.Error(err))
+	}
+
 	gs := grpc.NewServer()
-	server := pkg.NewServer()
-	processorpb.RegisterProcessorServiceServer(gs, &server)
+	processorpb.RegisterProcessorServiceServer(gs, server)
 
 	logger.Info("start processor server")
 	if err := gs.Serve(lis); err != nil {
@@ -36,4 +40,14 @@ func initLogger() *zap.Logger {
 	}
 
 	return logger
+}
+
+func initServer() (*pkg.Server, error) {
+	resourceService, err := pkg.NewResourceService()
+	if err != nil {
+		return nil, err
+	}
+
+	server := pkg.NewServer(resourceService)
+	return server, nil
 }
