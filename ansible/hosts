@@ -1,0 +1,6 @@
+master     ansible_connection=local
+worker1    ansible_connection=local
+worker2    ansible_connection=local
+
+[workers]
+worker[1:2]
