@@ -1,0 +1,33 @@
+- hosts: workers
+  become: yes
+  become_user: root
+  gather_facts: True
+
+  tasks:
+    ## Init k8s node
+    - name: Kubeadm reset v1.11 or later
+      command: kubeadm reset -f
+
+    - name: Copy join-command
+      copy:
+        src: /home/vagrant/sync/join-command.sh
+        dest: /tmp/join-command.sh
+        mode: 0777
+
+    ## Join k8s
+    - name: Join the node to cluster
+      command: sh /tmp/join-command.sh
+
+    ## Change ip of kubelet DNS
+    - name: Change config.yaml
+      replace:
+        dest: /var/lib/kubelet/config.yaml
+        regexp: '10.96.0.10'
+        replace: 10.32.0.10
+
+    ## Restart kubelet
+    - name: Daemon-reload and restart kubelet
+      systemd:
+        state: restarted
+        daemon_reload: yes
+        name: kubelet
