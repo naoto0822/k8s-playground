@@ -16,4 +16,4 @@
 
 .vagrant/
 
-sync/join-command.sh
+ansible/sync/join-command.sh
