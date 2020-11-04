@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: processor-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: processor-app
+  template:
+    metadata:
+      labels:
+        app: processor-app
+    spec:
+      containers:
+        - name: processor-app
+          image: naoto0822/k8s-playground-processor:latest
+          ports:
+          - containerPort: 10002
