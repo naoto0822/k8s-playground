@@ -14,7 +14,7 @@ type ProcessorService struct {
 }
 
 func NewProcessorService() (*ProcessorService, error) {
-	conn, err := grpc.Dial("127.0.0.1:10002", grpc.WithInsecure())
+	conn, err := grpc.Dial("processor-app.default:10002", grpc.WithInsecure())
 	if err != nil {
 		return nil, err
 	}
