@@ -27,7 +27,7 @@ func main() {
 	v1.GET("/soba", handler.GetSobaList)
 
 	//go func() {
-	if err := e.Start(":8080"); err != nil {
+	if err := e.Start(":10001"); err != nil {
 		logger.Fatal("failed server start", zap.Error(err))
 	}
 	//}()

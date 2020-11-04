@@ -14,7 +14,7 @@ func main() {
 	logger := initLogger()
 	logger.Info("processor")
 
-	lis, err := net.Listen("tcp", ":8081")
+	lis, err := net.Listen("tcp", ":10002")
 	if err != nil {
 		logger.Fatal("failed listen", zap.Error(err))
 	}

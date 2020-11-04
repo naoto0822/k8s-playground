@@ -14,7 +14,7 @@ type ResourceService struct {
 }
 
 func NewResourceService() (*ResourceService, error) {
-	conn, err := grpc.Dial("127.0.0.1:8082", grpc.WithInsecure())
+	conn, err := grpc.Dial("127.0.0.1:10003", grpc.WithInsecure())
 	if err != nil {
 		return nil, err
 	}
