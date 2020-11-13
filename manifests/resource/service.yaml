@@ -1,12 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: resource-service
+  name: resource-app-service
+  labels:
+    app: resource-app
 spec:
-  type: ClusterIP
   selector:
     app: resource-app
   ports:
-  - protocol: TCP
+  - name: grpc
+    protocol: TCP
     port: 10003
     targetPort: 10003

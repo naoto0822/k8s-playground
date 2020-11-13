@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: resource-deployment
+  name: resource-app
 spec:
   replicas: 1
   selector:
@@ -13,7 +13,7 @@ spec:
         app: resource-app
     spec:
       containers:
-        - name: resource-app
-          image: naoto0822/k8s-playground-resource:latest
-          ports:
-          - containerPort: 10003
+      - name: resource-app
+        image: naoto0822/k8s-playground-resource:latest
+        ports:
+        - containerPort: 10003
