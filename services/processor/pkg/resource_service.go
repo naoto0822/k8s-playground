@@ -14,7 +14,7 @@ type ResourceService struct {
 }
 
 func NewResourceService() (*ResourceService, error) {
-	conn, err := grpc.Dial("resource-app.default:10003", grpc.WithInsecure())
+	conn, err := grpc.Dial("resource-app-service:10003", grpc.WithInsecure())
 	if err != nil {
 		return nil, err
 	}
@@ -30,6 +30,10 @@ func (s *ResourceService) GetRamenList(ctx context.Context) ([]*types.Ramen, err
 	res, err := s.cli.GetRamenList(ctx, req)
 	if err != nil {
 		return nil, err
+	}
+
+	for _, r := range res.Ramens {
+		r.Name = "touch: " + r.Name
 	}
 
 	return res.Ramens, nil

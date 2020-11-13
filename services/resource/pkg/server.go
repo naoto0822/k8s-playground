@@ -20,6 +20,10 @@ func (s *Server) GetRamenList(_ context.Context, _ *resourcepb.GetRamenRequest) 
 			Id:   1,
 			Name: "arimasa",
 		},
+		{
+			Id:   2,
+			Name: "musashiya",
+		},
 	}
 
 	res := &resourcepb.GetRamenResponse{

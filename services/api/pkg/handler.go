@@ -26,7 +26,7 @@ func (h *Handler) GetSobaList(c echo.Context) error {
 	ctx := context.Background()
 	sobas, err := h.processorService.GetSobaList(ctx)
 	if err != nil {
-		return c.NoContent(http.StatusInternalServerError)
+		return c.String(http.StatusInternalServerError, err.Error())
 	}
 
 	return c.JSON(http.StatusOK, sobas)
