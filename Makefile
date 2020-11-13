@@ -13,3 +13,11 @@ delete-local:
 	kubectl delete -f manifests/api
 	kubectl delete -f manifests/processor
 	kubectl delete -f manifests/resource
+
+deploy-monitoring:
+	kubectl apply -f manifests/monitoring/setup
+	sleep 5
+	kubectl apply -f manifests/monitoring
+
+delete-monitoring:
+	kubectl delete -Rf manifests/monitoring

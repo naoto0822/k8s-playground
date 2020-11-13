@@ -17,3 +17,5 @@
 .vagrant/
 
 ansible/sync/join-command.sh
+
+.DS_Store
